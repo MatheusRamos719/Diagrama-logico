@@ -1,11 +1,10 @@
-# Banco de Dados - Modelo Entidade-Relacionamento
+# Meu Projeto - Banco de Dados
 
-## Diagrama ER
+## Diagrama Entidade-Relacionamento
 
 ```mermaid
-%%{init: {'theme': 'forest'}}%%
 erDiagram
-       UBS {
+    UBS {
         int id_ubs PK "🔑"
         string cnes UK "🔒"
         string nome
@@ -46,8 +45,25 @@ erDiagram
         int id_ubs_coleta FK
     }
     
-    Paciente }o--|| UBS : "pertence a"
-    Profissional }o--|| UBS : "lotado em"
-    Exame }o--|| UBS : "coletado em"
-    Exame }o--|| Paciente : "pertence a"
-    Exame }o--|| Profissional : "responsável por"
+    UBS ||--o{ Paciente : "atende"
+    UBS ||--o{ Profissional : "lotado em"
+    UBS ||--o{ Exame : "local de coleta"
+    Paciente ||--o{ Exame : "realiza"
+    Profissional ||--o{ Exame : "responsável por"
+```
+
+## Legenda das Cardinalidades
+
+| Símbolo | Significado |
+|---------|-------------|
+| `\|\|--o\{` | Um para Muitos (1 : N) |
+| `\|\|--\|\|` | Um para Um (1 : 1) |
+| `}o--o\{` | Muitos para Muitos (N : N) |
+
+## Relacionamentos
+
+- **UBS** atende muitos **Pacientes**
+- **UBS** tem muitos **Profissionais** lotados
+- **UBS** é local de coleta de muitos **Exames**
+- **Paciente** realiza muitos **Exames**
+- **Profissional** é responsável por muitos **Exames**
