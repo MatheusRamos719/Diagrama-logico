@@ -3,6 +3,7 @@
 ## Diagrama Entidade-Relacionamento
 
 ```mermaid
+%%{init: {'theme': 'forest'}}%%
 erDiagram
     UBS {
         int id_ubs PK "🔑"
