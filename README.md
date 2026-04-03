@@ -56,6 +56,6 @@ erDiagram
 
 | Símbolo | Significado |
 |---------|-------------|
-| ||--o{ | Um para muitos (1 : N) |
-| ||--|| | Um para um (1 : 1) |
-| }o--o{ | Muitos para muitos (N : N) |
+| "||--o{" | Um para muitos (1 : N) |
+| "||--||" | Um para um (1 : 1) |
+| "}o--o{" | Muitos para muitos (N : N) |
